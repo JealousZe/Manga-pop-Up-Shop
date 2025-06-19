@@ -49,6 +49,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Ensure the left arrow is hidden on page load
   prevArrow.style.display = 'none';
 
+  const container = document.querySelector('.card-container');
+const card = document.querySelector('.card'); // Adjust selector as needed
+
+document.querySelector('.arrow-right').addEventListener('click', () => {
+  container.scrollLeft += card.offsetWidth;
+});
   cardWrapper.addEventListener('scroll', () => {
       const maxScrollLeft = cardWrapper.scrollWidth - cardWrapper.clientWidth;
 

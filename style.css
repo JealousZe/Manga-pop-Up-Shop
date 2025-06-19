@@ -14,9 +14,18 @@ body {
     padding: 16px;
     background-color: rgb(0, 0, 0);
     color: rgb(252, 252, 252);
+     margin: 0;
 }
-/* end: Global */
 
+.navbar {
+  margin-top: 0;
+  padding-top: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: fixed; /* or absolute if you prefer */
+  z-index: 1100;   /* ensures it stays above other content */
+}
 
 
 /* start: Slider */
@@ -59,13 +68,15 @@ body {
     grid-auto-flow: column;
     grid-auto-columns: 280px; /* Adjust card width */
     overflow-x: auto;
-    padding: 24px;
-    gap: 24px; /* Adjust gap */
+    padding: 45px;
+    gap: 60px; /* Adjust gap */
     cursor: grab;
     scroll-snap-type: x;
     scroll-padding-inline: 24px;
     scroll-behavior: smooth;
     scrollbar-width: none;
+    align-items: center; 
+    position: relative;
 }
 .card-wrapper::-webkit-scrollbar {
     display: none;
@@ -105,6 +116,12 @@ body {
     filter: grayscale(0.0) brightness(1);
 }
 
+.card-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
 .card-item:hover img::after {
     opacity: 1;
     inset: 20px;
@@ -120,11 +137,33 @@ body {
     
 }
 
+.card-info{
+   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 .card-title{
 
     color:rgb(253, 253, 253);
     text-decoration: none;
+  font-size: 1.2em;
+    
 }
+
+.card-title-headings{
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.card-description{
+  color: gray;
+  font-size: 1em;
+}
+
+
+
+
+
 /* end: Slider */
 
 
@@ -330,3 +369,9 @@ h1 {
     height: 80vh; /* Set height to 80% of the viewport */
 }
 
+
+/* Card wrapper should be relative *
+/* Arrows should be absolutely positioned inside the card wrapper */
+
+.arrow.prev,.arrow.next{visibility: hidden;
+}
