@@ -146,6 +146,13 @@ body {
     font-size: 0.95rem;
     color: #bdbdbd;
     margin-bottom: 2px;
+     text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+}
+
+.anime-meta span {
+    background: rgba(0,0,0,0.5);
+    padding: 2px 6px;
+    border-radius: 4px;
 }
 
 .anime-links {
